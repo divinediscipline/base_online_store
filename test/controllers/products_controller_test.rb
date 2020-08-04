@@ -51,4 +51,15 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+
+  test "can't delete product in cart" do
+    # assert difference checks to see that the result of the first parameter passed before the expression in the block differ by the second parameter
+    # execute Product.count, note the result, execute the block, get the result of Product.count again.
+    # Both results should differ by 0
+    assert_difference('Product.count', 0) do
+      delete product_url(products(:two))
+    end
+  
+    assert_redirected_to products_url
+  end
 end
