@@ -23,10 +23,10 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get new_order_url
-    assert_response :success
-  end
+  # test "should get new" do
+  #   get new_order_url
+  #   assert_response :success
+  # end
 
   test "should create order" do
     assert_difference('Order.count') do
